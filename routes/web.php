@@ -9,6 +9,7 @@ use App\Livewire\Auth\Passwords\Reset;
 use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
 use App\Livewire\Dashboard;
+use App\Livewire\MyProfile;
 use App\Livewire\UserProfile;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,10 @@ Route::get('/dashboard', Dashboard::class)
 
 Route::get('/profile/{user}', UserProfile::class)
     ->name('user-profile')
+    ->middleware('auth');
+
+Route::get('/my-profile', MyProfile::class)
+    ->name('my-profile')
     ->middleware('auth');
 
 Route::middleware('guest')->group(function () {
