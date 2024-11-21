@@ -5,8 +5,8 @@
         <div>
             {{ $dog['displayBreed'] }}
         </div>
-        <div class="border-t-2 border-teal-500 w-full p-2">
-            <div class="cursor-pointer hover:text-red-500"><i class="fa-regular fa-heart text-lg"></i> Like</div>
+        <div class="border-t-2 border-teal-500 w-full p-2" x-data="{isLike: {{ $dog['isLike'] }} }">
+            <div :class="isLike ? 'text-red-500' : ''" class="cursor-pointer hover:text-red-500" wire:click="likeOrUnlikeDog"><i class="fa-regular fa-heart text-lg"></i> {{ $dog['isLike'] ? 'Unlike' : 'Like' }}</div>
         </div>
     </div>
 </div>

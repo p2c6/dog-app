@@ -15,7 +15,9 @@ class CardList extends Component
 
     public function callApi()
     {
-        try {
+        try {           
+            $dogIds = $this->getUserLikes();
+
             $response = Http::get("$this->apiUrl/api/breeds/list/all");
             $breeds = isset($response->json()['message']) ? $response->json()['message'] : null;
 
@@ -38,24 +40,38 @@ class CardList extends Component
             foreach ($breeds as $key => $value) {
                 if (count($value) > 0) {
                     foreach ($value as $subBreed) {
+                        $isLike = false;
+
+                        if (in_array($id, $dogIds)) {
+                            $isLike = true;
+                        }
+
                         $url = $responses[$index]->json()['message'];
                         $allDogs[] = [
                             'id' => $id,
                             'breed' => $key,
                             'subBreed' => $subBreed,
                             'displayBreed' => ucwords($subBreed . ' ' .  $key),
-                            'imageUrl' => $url
+                            'imageUrl' => $url,
+                            'isLike' => $isLike
                         ];
                         $index++;
                     }
                 } else {
+                    $isLike = false;
+
+                    if (in_array($id, $dogIds)) {
+                        $isLike = true;
+                    }
+
                     $url = $responses[$index]->json()['message'];
                     $allDogs[] = [
                         'id' => $id,
                         'breed' => $key,
                         'subBreed' => null,
                         'displayBreed' => ucwords($key),
-                        'imageUrl' => $url
+                        'imageUrl' => $url,
+                        'isLike' => $isLike
                     ];
                     $index++;
                 }
@@ -70,6 +86,13 @@ class CardList extends Component
         }
     }
 
+    public function getUserLikes(): array
+    {
+        $likeByUser = auth()->user()->likes();
+        $pluckDogId = $likeByUser->pluck('dog_id')->toArray();
+
+        return $pluckDogId;
+    }
 
     public function render()
     {
