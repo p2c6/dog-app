@@ -1,6 +1,6 @@
 <div class="w-auto bg-white rounded-md">
     <div class="flex flex-col items-center">
-        <img class="w-auto h-72 m-2" src="{{ $dog['imageUrl'] }}">
+        <img class="w-72 h-48 m-2" src="{{ $dog['imageUrl'] }}">
         <div></div>
         <div>
             {{ $dog['displayBreed'] }}
