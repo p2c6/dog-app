@@ -1,7 +1,7 @@
 <div class="bg-teal-500 p-2">
     <div class="container mx-auto flex justify-between items-center text-white">
         <div>
-            <h4 class="font-bold">Dog App</h4>
+            <a href="{{ route('dashboard') }}" class="font-bold">Dog App</a>
         </div>
         <div>
             <div class="relative inline-block text-left" x-data="{ collapse: false }">
