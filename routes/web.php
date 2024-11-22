@@ -36,7 +36,9 @@ Route::get('/profile/{user}', UserProfile::class)
 
 Route::get('/my-profile', function () {
     return view('pages.my-profile');
-})->name('my-profile');
+})
+->name('my-profile')
+->middleware('auth');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
