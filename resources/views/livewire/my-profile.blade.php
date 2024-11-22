@@ -52,7 +52,7 @@
     <div class="flex justify-center p-5">
         <div class="flex items-center justify-center bg-white w-auto p-5 md:px-36">
             <form wire:submit.prevent="updateAboutMe" class="self-start mt-10 w-auto md:w-96">
-                <h4 class="text-teal-500 font-semibold text-lg"><i class="fa-regular fa-user text-lg"></i> About Me</h4>
+                <h4 class="text-teal-500 font-semibold text-lg"><i class="fa-regular fa-pen-to-square"></i> About Me</h4>
                 <div class=" border-b-2 border-gray-100 my-2"></div>
 
                 <div>
