@@ -27,17 +27,10 @@
     </head>
 
     <body>
-       
 
-        <div class="container">
-            <div class="bg-gray-100 h-full w-screen">
-                @auth
-                    @include('layouts.includes.navbar')
-                @endauth
-                <div class="container mx-auto">
-                    @yield('body')
-                </div>
-            </div>
+        <div class="container mx-auto">
+            @yield('body')
         </div>
+
     </body>
 </html>
