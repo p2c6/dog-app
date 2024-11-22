@@ -48,6 +48,7 @@ class UserSeeder extends Seeder
                 'address' => 'Quezon City',
                 'dob' => '1995-05-06',
                 'gender' => 'Male',
+                'description' => 'All I want are dogs.',
                 'created_at' => now(),
             ],
             [
@@ -57,6 +58,7 @@ class UserSeeder extends Seeder
                 'address' => 'Paranaque City',
                 'dob' => '1995-06-08',
                 'gender' => 'Female',
+                'description' => 'I love dogs. They are my family.',
                 'created_at' => now(),
             ],
             [
@@ -66,6 +68,7 @@ class UserSeeder extends Seeder
                 'address' => 'Cebu City',
                 'dob' => '1992-04-08',
                 'gender' => 'Male',
+                'description' => 'Dogs are my happiness.',
                 'created_at' => now(),
             ],
         ];
