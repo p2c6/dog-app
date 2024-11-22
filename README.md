@@ -26,7 +26,7 @@ After installing dependencies, set-up your env.
 
 ## Setup
 
-Duplicate the .env.example located in your tallstack-post-app root:
+After opening the project directory, duplicate the .env.example located in your tallstack-post-app root:
 
 ```sh
 cp .env.example .env
