@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function() {
     return redirect('dashboard');
-});
+})->name('home');;
 
 Route::get('/dashboard', Dashboard::class)
     ->name('dashboard')
