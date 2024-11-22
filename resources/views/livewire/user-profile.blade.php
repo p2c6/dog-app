@@ -17,7 +17,7 @@
             </div>
             
         </div>
-        <div class="flex flex-col items-center justify-center">
+        <div class="flex flex-col">
             <div class="mt-2">
                 @livewire('like-list', ['dogs' => $dogs])
             </div>
