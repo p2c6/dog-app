@@ -10,6 +10,7 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
 use App\Livewire\Dashboard;
 use App\Livewire\MyProfile;
+use App\Livewire\TestComponent;
 use App\Livewire\UserProfile;
 use Illuminate\Support\Facades\Route;
 
@@ -33,9 +34,11 @@ Route::get('/profile/{user}', UserProfile::class)
     ->name('user-profile')
     ->middleware('auth');
 
-Route::get('/my-profile', MyProfile::class)
-    ->name('my-profile')
-    ->middleware('auth');
+Route::get('/my-profile', function () {
+    return view('pages.my-profile');
+})->name('my-profile');
+
+Route::get('/test-livewire', TestComponent::class)->name('test-livewire');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
