@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Client\Pool;
 use Illuminate\Support\Facades\Http;
@@ -92,7 +93,7 @@ class UserProfile extends Component
 
     public function getUserLikes($user): array
     {
-        $user = User::where('id', $user->id)->first();
+        $user = User::where('id', $user->user_id)->first();
         $likeByUser = $user->likes();
         $pluckDogId = $likeByUser->pluck('dog_id')->toArray();
 
@@ -101,7 +102,7 @@ class UserProfile extends Component
     
     public function getUser()
     {
-        $this->user = User::where('id', $this->user)->first();
+        $this->user = Profile::where('user_id', $this->user)->first();
     }
 
     public function mount()

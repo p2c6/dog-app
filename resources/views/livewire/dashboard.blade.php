@@ -1,6 +1,6 @@
-@extends('layouts.base')
+@extends('layouts.app')
 
-@section('body')
+@section('content')
 <div class="flex items-center justify-center">
     <div class="flex flex-col md:flex-row gap-5">
         

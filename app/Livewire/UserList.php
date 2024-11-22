@@ -2,16 +2,25 @@
 
 namespace App\Livewire;
 
+use App\Models\Profile;
 use App\Models\User;
 use Livewire\Component;
 
 class UserList extends Component
 {
     public $users = [];
+    public $otherUser;
 
     public function getOtherUsers()
     {
-        $this->users = User::whereNot('id', auth()->user()->id)->get(['id', 'name']);
+        if($this->otherUser) {
+            $this->users = Profile::where('user_id', '!=', auth()->user()->id)
+                            ->where('user_id', '!=', $this->otherUser->user_id)
+                            ->get(['id', 'user_id', 'name']);
+            return;
+        }
+
+        $this->users = Profile::whereNot('user_id', auth()->user()->id)->get(['id', 'user_id', 'name']);
     }
     
     public function mount()
