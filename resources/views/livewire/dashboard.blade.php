@@ -10,7 +10,7 @@
 
         <div class="flex flex-col items-center justify-center">
             <div>
-                <h4>Choose your favorite dog</h4>
+                <h4><i class="fa-solid fa-paw"></i> Choose your favorite dog</h4>
             </div>
             @if(session('message'))
             <div class="w-full bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md mb-2" role="alert">
@@ -26,9 +26,6 @@
     
             <div>
                 @livewire('card-list')
-            </div>
-            <div>
-                Other users who also likes dog
             </div>
         </div>
 
