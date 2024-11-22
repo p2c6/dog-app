@@ -38,8 +38,6 @@ Route::get('/my-profile', function () {
     return view('pages.my-profile');
 })->name('my-profile');
 
-Route::get('/test-livewire', TestComponent::class)->name('test-livewire');
-
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
         ->name('login');
