@@ -18,7 +18,7 @@
             
         </div>
         <div class="flex flex-col">
-            <div class="mt-2">
+            <div class="mt-5">
                 @livewire('like-list', ['dogs' => $dogs])
             </div>
         </div>
