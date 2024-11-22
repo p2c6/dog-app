@@ -32,7 +32,7 @@ After opening the project directory, duplicate the .env.example located in your 
 cp .env.example .env
 ```
 
-After duplication .env, uncomment variables, and update database name which you prefer (default as **dog_app**). Make sure **initial database exists** on your database administrator like **phpMyAdmin**.
+After duplication .env, uncomment variables, and update database name which you prefer (default as **dog_app**) and your database connection (I used MySQL). Make sure **initial database exists** on your database administrator like **phpMyAdmin**.
 
 ```sh
 DB_CONNECTION=mysql
