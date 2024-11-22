@@ -64,10 +64,7 @@ Run the server on your first terminal with the command:
 php artisan serve
 ```
 
-And the frontend
-
-
-Run the server on your second terminal with the command:
+And the frontend on your second terminal with the command:
  
 ```sh
 npm run dev
