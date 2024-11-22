@@ -44,9 +44,7 @@ DB_PASSWORD=
 ```
 
 
-After setting up **.env**, link the storage with the command below:
-
-Run the migration and the seeder:
+After setting up **.env**, run the migration and the seeder:
 
 ```sh
 php artisan migrate:fresh --seed
