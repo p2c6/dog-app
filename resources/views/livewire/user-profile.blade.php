@@ -19,6 +19,7 @@
         </div>
         <div class="flex flex-col">
             <div class="mt-5">
+                <h4 class="text-sm text-red-500"><i class="fa-regular fa-heart text-sm"></i> Liked dog/s</h4>
                 @livewire('like-list', ['dogs' => $dogs])
             </div>
         </div>
